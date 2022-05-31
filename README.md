@@ -1,5 +1,7 @@
 # VISUALIZAÇÃO DE DADOS COM PYTHON
 
+![GITHUB (1)](https://user-images.githubusercontent.com/78058494/171275250-0287faa7-4265-4c20-9bbd-08a9358a0db5.gif)
+
 Um projeto público simples para demonstrar meu conhecimento na área de dados. O Objetivo deste projeto é:
 
 • Ler um CSV
