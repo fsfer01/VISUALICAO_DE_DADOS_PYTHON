@@ -36,8 +36,17 @@ tabela['city_ibge_code'] = tabela['city_ibge_code'].replace(np.nan, 0) #CONVERTE
 tabela['city_ibge_code'] = tabela['city_ibge_code'].astype(int) #CONVERTE TODA A COLUNA EM INTEIRO
 ```
 
-## 2º: ADICIONANDO CHAVE PRIMÁRIA EM OUTRAS TABELAS PARA CRUZAMENTOS FUTUROS.
-![image](https://user-images.githubusercontent.com/78058494/165651768-f78bb241-90eb-429c-b7e2-67d1438a0766.png)
+## 2º: CRIANDO UM SEGUNDO DF AGRUPADO PARA CRIAR O GRÁFICO DE LINHAS:
+![image](https://user-images.githubusercontent.com/78058494/171273065-71117c05-eab0-4a0a-aa33-f4d3ad497901.png)
+
+
+Para criar um gráfico de linhas, foi necessário criar um segundo DF agrupando as datas e mortes. Segue código abaixo:
+```python
+Data_Mortes = tabela[['date','deaths']] #Criando o dataframe com colunas especificas
+Dados_tratados = Data_Mortes.groupby('date',as_index=False)[['date','deaths']].sum()#agrupando os dados, e evitando a contatenação e fazendo a soma dos dados
+df_agrupado = Dados_tratados #passando os dados para o data Frame
+```
+
 
 ## 3º: DATA EM FORMATO AMERICANO E EXTENSO.
 ![image](https://user-images.githubusercontent.com/78058494/166162213-46d48ad2-37db-4c78-9671-f8c5755466e9.png)
