@@ -1,4 +1,29 @@
-# VISUALIZAÇÃO_DE_DADOS_PYTHON
+# VISUALIZAÇÃO DE DADOS COM PYTHON
+
+Um projeto público simples para demonstrar meu conhecimento na área de dados. O Objetivo deste projeto é:
+
+• Ler um CSV
+
+• Modelar os dados necessários
+
+• Criar gráficos em cima dos dados disponíveis.
+
+# TECNOLOGIAS USADAS:
+
+• PYTHON
+
+• Plotly Express - LINK DA DOCUMENTAÇÃO: [Documentação Plotly Express]([https://www.tweepy.org/](https://plotly.com/python/plotly-express/))
+
+
+
+
+
+
+
+
+
+
+
 
 Segue resultados abaixo:
 
