@@ -25,14 +25,16 @@ pip install numpy
 ```
 # DESAFIOS:
 
-## 1º: COLUNAS COMO UMA ESPÉCIE DE DICIONÁRIO, SEGUE IMAGEM ABAIXO:
-![image](https://user-images.githubusercontent.com/78058494/165187939-8954dd36-0236-4071-a228-41a392cdf5c0.png)
+## 1º: COLUNAS COM NAN:
+![image](https://user-images.githubusercontent.com/78058494/171271989-77470313-63a8-4d6d-ac45-875ccc0bd6c0.png)
 
-As colunas entities  e user estão do modo mostrado no anexo acima. Para resolver esse problema, foi utilizado a biblioteca flatten_json para gerar outra tabela de dados através dessas colunas. Segue link da biblioteca e de sua documentação abaixo:
 
-link: https://github.com/amirziai/flatten
+A coluna city_ibge_code tem várias regristros NAN, e por causa desses registros, não é possível converter a coluna para o tipo inteiro. Então, com o código abaixo, conseguimos substituir os NAN por 0, e após isso, conseguimos normalmente converter a coluna para o tipo inteiro.
 
-![image](https://user-images.githubusercontent.com/78058494/165192557-cbc012c2-fb71-43fb-8a10-1764927b2de9.png)
+```python
+tabela['city_ibge_code'] = tabela['city_ibge_code'].replace(np.nan, 0) #CONVERTENDO TODOS OS VALORES NAN POR 0
+tabela['city_ibge_code'] = tabela['city_ibge_code'].astype(int) #CONVERTE TODA A COLUNA EM INTEIRO
+```
 
 ## 2º: ADICIONANDO CHAVE PRIMÁRIA EM OUTRAS TABELAS PARA CRUZAMENTOS FUTUROS.
 ![image](https://user-images.githubusercontent.com/78058494/165651768-f78bb241-90eb-429c-b7e2-67d1438a0766.png)
