@@ -72,6 +72,29 @@ base1 = ibge[['Códigos','UFs']]#LENDO COLUNAS ESPECÍFICAS
 nova_base = tabela.merge(base1, left_on='city_ibge_code', right_on='Códigos', how='left')
 ```
 
+Podemos ver que criamos um DF temporário chamado base1, ele será usado como base para o cruzamento. Após isso, vamos fazer o merge, que é o cruzamento entre as bases. Vamos usar a coluna city_ibge_code que está no DF casos como chave de pesquisa e cruzar com a coluna Códigos que está no DF base1, e o termo left é da esquerda para direita, vai ficar melhor o entendimento vendo o resultado abaixo:
+
+![image](https://user-images.githubusercontent.com/78058494/171280571-b9c66103-9fe0-4a54-9241-4d5b7b95ba5e.png)
+
+E após isso, conseguimos criar o gráfico geográfico usando o código abaixo:
+
+```python
+fig = px.choropleth_mapbox(
+    estado, # data frame com os dados
+    locations = "UFs", # coluna com o ID, neste caso, o
+    geojson = limites_brasil, # arquivo com os limites do mapa
+    color = "deaths", # coluna do data frame para os valores reais
+    mapbox_style = "carto-positron", # define o estilo do mapa
+    center={"lat":-14, "lon": -55}, # define a posição do mapa que será gerado
+    zoom = 3, # zoom inicial
+    opacity = 0.5, # adiciona opacidade para que apareça o fundo
+)
+fig.show()
+```
+
+E o resultado será:
+
+![image](https://user-images.githubusercontent.com/78058494/171269915-31bc8631-bf04-4575-bf42-d6efba6f7db7.png)
 
 
 
@@ -92,6 +115,5 @@ Gráfico de barras:
 
 
 
-Mapa de calor:
-![image](https://user-images.githubusercontent.com/78058494/171269915-31bc8631-bf04-4575-bf42-d6efba6f7db7.png)
+
 
