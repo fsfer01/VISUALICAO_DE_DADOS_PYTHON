@@ -48,6 +48,17 @@ Data_Mortes = tabela[['date','deaths']] #Criando o dataframe com colunas especif
 Dados_tratados = Data_Mortes.groupby('date',as_index=False)[['date','deaths']].sum()#agrupando os dados, e evitando a contatenação e fazendo a soma dos dados
 df_agrupado = Dados_tratados #passando os dados para o data Frame
 ```
+Após criar o segundo DF agrupado como mostrado acima, vamos plotar o gráfico utilizando o código abaixo:
+```python
+graficolinha = px.line(df_agrupado, x="date", y="deaths", title='MORTES POR PERÍODO')
+graficolinha.update_yaxes(title = "MORTES POR COVID-19") #altera o nome do eixo Y
+graficolinha.update_xaxes(title = "PERÍODO")#altera o nome do eixo X
+graficolinha.show()
+```
+Após isso, segue resultado abaixo:
+
+![image](https://user-images.githubusercontent.com/78058494/171269835-d8820e3f-305d-47d2-9807-e88babd2ce61.png)
+
 
 
 ## 3º: DATA EM FORMATO AMERICANO E EXTENSO.
@@ -83,8 +94,7 @@ Segue resultados abaixo:
 Gráfico de barras:
 ![image](https://user-images.githubusercontent.com/78058494/171269794-5f53e2bc-b7db-4dff-b6cb-32b075f4d473.png)
 
-Gráfico de Linha:
-![image](https://user-images.githubusercontent.com/78058494/171269835-d8820e3f-305d-47d2-9807-e88babd2ce61.png)
+
 
 Mapa de calor:
 ![image](https://user-images.githubusercontent.com/78058494/171269915-31bc8631-bf04-4575-bf42-d6efba6f7db7.png)
