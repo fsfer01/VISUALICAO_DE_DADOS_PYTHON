@@ -60,20 +60,16 @@ Após isso, segue resultado abaixo:
 ![image](https://user-images.githubusercontent.com/78058494/171269835-d8820e3f-305d-47d2-9807-e88babd2ce61.png)
 
 
-
 ## 3º: CRUZANDO UM DF COM OUTRO PARA PEGAR O NOME CORRETO DOS ESTADOS ATRAVÉS DA COLUNA city_ibge_code
 ![image](https://user-images.githubusercontent.com/78058494/171277899-0ea38259-9527-451c-a439-ddbe4396ace7.png)
 
-Código abaixo:
+No DF casos, não temos os nomes dos estados em um formato apropriado para que o gráfico seja plotado corretamente, para isso, vamos cruzar com outro DF para pegar o nome correto dos estados. Segue código e explicação abaixo:
 
 ```python
-#CONVERTENDO DATA NO DATAFRAME:
-import locale; locale.setlocale(locale.LC_TIME, 'en_US.UTF-8'); 
-dfTweetstabelao['created_at'] = pd.to_datetime(dfTweetstabelao['created_at'], format='%a %b %d %H:%M:%S %z %Y').dt.strftime('%Y-%m-%d %H:%M:%S')
-
-#CONVERTENDO A COLUNA PARA DATA
-dfTweetstabelao['created_at'] = pd.to_datetime(dfTweetstabelao['created_at']) # TRANFORMANDO COLUNA DE STRING PARA DATATIME BR
-dfTweetstabelao['created_at'] = dfTweetstabelao['created_at']-timedelta(hours=3) #SUBTRAINDO 3 HORAS (CONVERTENDO UTC PARA BR)
+#CRUZAMENTO DE BASES - IGUAL AO PROCV NO EXCEL
+base1 = ibge[['Códigos','UFs']]#LENDO COLUNAS ESPECÍFICAS
+#FAZENDO PROCV
+nova_base = tabela.merge(base1, left_on='city_ibge_code', right_on='Códigos', how='left')
 ```
 
 
