@@ -96,21 +96,21 @@ E o resultado será:
 
 ![image](https://user-images.githubusercontent.com/78058494/171269915-31bc8631-bf04-4575-bf42-d6efba6f7db7.png)
 
+4º: GRÁFICO DE BARRAS:
 
+Esse gráfico foi simples, só executar o código abaixo:
 
-
-
-
-
-
-
-
-
-
+```python
+#passa os dados dos ESTADOS BRASILEIROS(states) e a QUANTIDADE DE CASOS CONFIRMADOS(confirmed)
+graficobarra = px.histogram(tabela, x="state", y="confirmed", color="state", 
+                       title="TOTAL DE CASOS DE COVID-19 POR ESTADOS BRASILEIROS").update_xaxes(categoryorder="total ascending")
+graficobarra.update_yaxes(title = "TOTAL DE CASOS POR ESTADO") #altera o nome do eixo Y
+graficobarra.update_xaxes(title = "CASOS CONFIRMADOS POR ESTADO")#altera o nome do eixo X
+graficobarra.show() #Mostra o grafico completo
+```
 
 Segue resultados abaixo:
 
-Gráfico de barras:
 ![image](https://user-images.githubusercontent.com/78058494/171269794-5f53e2bc-b7db-4dff-b6cb-32b075f4d473.png)
 
 
