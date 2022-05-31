@@ -12,7 +12,8 @@ Um projeto público simples para demonstrar meu conhecimento na área de dados. 
 
 • PYTHON
 
-• Plotly Express - LINK DA DOCUMENTAÇÃO: [Documentação Plotly Express](https://www.tweepy.org/](https://plotly.com/python/plotly-express/)
+• Plotly Express - LINK DA DOCUMENTAÇÃO: [Documentação Plotly Express](https://plotly.com/python/plotly-express/)
+
 
 
 
