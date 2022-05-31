@@ -61,8 +61,8 @@ Após isso, segue resultado abaixo:
 
 
 
-## 3º: DATA EM FORMATO AMERICANO E EXTENSO.
-![image](https://user-images.githubusercontent.com/78058494/166162213-46d48ad2-37db-4c78-9671-f8c5755466e9.png)
+## 3º: CRUZANDO UM DF COM OUTRO PARA PEGAR O NOME CORRETO DOS ESTADOS ATRAVÉS DA COLUNA city_ibge_code
+![image](https://user-images.githubusercontent.com/78058494/171277899-0ea38259-9527-451c-a439-ddbe4396ace7.png)
 
 Código abaixo:
 
